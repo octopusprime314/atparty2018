@@ -12,6 +12,8 @@ int main(int argc, char** argv) {
     return 0;
 }
 
+#if defined(_WIN32)
+
 int CALLBACK WinMain(
   _In_ HINSTANCE hInstance,
   _In_ HINSTANCE hPrevInstance,
@@ -19,7 +21,7 @@ int CALLBACK WinMain(
   _In_ int       nCmdShow
 )
 {
-    char argv0[] = "Reboot.exe";
-    char* argv[] = { argv0 };
-    main(1, argv);
+    main(__argc, __argv);
 }
+
+#endif

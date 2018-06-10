@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.5)
-project(ReBoot)
-set(VS_STARTUP_VERSION ReBoot)
+project(HawaiiRelief)
+set(VS_STARTUP_VERSION HawaiiRelief)
 
 include(InstallRequiredSystemLibraries)
 
@@ -53,8 +53,7 @@ source_group("shading" FILES ${SHADING_HEADER_FILES} ${SHADING_SRC_FILES})
 source_group("glfw"    FILES ${GLFWPROC_SRC_FILES})
 source_group("audio"   FILES ${AUDIO_HEADER_FILES} ${AUDIO_SRC_FILES})
 
-add_executable(ReBoot
-    # WIN32
+add_executable(HawaiiRelief WIN32
                 ${MODEL_SRC_FILES}
                 ${PHYSICS_SRC_FILES}
                 ${SHADING_SRC_FILES}
@@ -65,16 +64,16 @@ add_executable(ReBoot
                 ${SHADING_HEADER_FILES}
                 ${AUDIO_HEADER_FILES})
 
-target_compile_features(ReBoot PRIVATE cxx_range_for)
+target_compile_features(HawaiiRelief PRIVATE cxx_range_for)
 
-target_link_libraries(ReBoot legacy_stdio_definitions.lib)
-target_link_libraries(ReBoot ${CMAKE_SOURCE_DIR}/libs/FreeImage/lib/FreeImage.lib)
-target_link_libraries(ReBoot ${CMAKE_SOURCE_DIR}/libs/glfw/lib/glfw3.lib)
-target_link_libraries(ReBoot debug     ${CMAKE_SOURCE_DIR}/libs/fbx-sdk/lib/debug/libfbxsdk-md.lib)
-target_link_libraries(ReBoot optimized ${CMAKE_SOURCE_DIR}/libs/fbx-sdk/lib/release/libfbxsdk-md.lib)
-target_link_libraries(ReBoot ${CMAKE_SOURCE_DIR}/libs/fmod/lowlevel/lib/fmod64_vc.lib)
+target_link_libraries(HawaiiRelief legacy_stdio_definitions.lib)
+target_link_libraries(HawaiiRelief ${CMAKE_SOURCE_DIR}/libs/FreeImage/lib/FreeImage.lib)
+target_link_libraries(HawaiiRelief ${CMAKE_SOURCE_DIR}/libs/glfw/lib/glfw3.lib)
+target_link_libraries(HawaiiRelief debug     ${CMAKE_SOURCE_DIR}/libs/fbx-sdk/lib/debug/libfbxsdk-md.lib)
+target_link_libraries(HawaiiRelief optimized ${CMAKE_SOURCE_DIR}/libs/fbx-sdk/lib/release/libfbxsdk-md.lib)
+target_link_libraries(HawaiiRelief ${CMAKE_SOURCE_DIR}/libs/fmod/lowlevel/lib/fmod64_vc.lib)
 
-install(TARGETS ReBoot RUNTIME DESTINATION bin)
+install(TARGETS HawaiiRelief RUNTIME DESTINATION bin)
 install(FILES "${CMAKE_SOURCE_DIR}/libs/freeimage/lib/FreeImage.dll"
               "${CMAKE_SOURCE_DIR}/libs/fmod/lowlevel/lib/fmod64.dll"
               "${CMAKE_SOURCE_DIR}/libs/fmod/lowlevel/lib/fmodL64.dll"

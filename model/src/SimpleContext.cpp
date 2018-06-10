@@ -38,7 +38,7 @@ SimpleContext::SimpleContext(int* argc, char** argv, unsigned int viewportWidth,
     });
 
     //Create a glfw window for a context
-    _window = glfwCreateWindow(viewportWidth, viewportHeight, "ReBoot", NULL, NULL);
+    _window = glfwCreateWindow(viewportWidth, viewportHeight, "HawaiiRelief", NULL, NULL);
     if (!_window) {
         // Window or OpenGL context creation failed
         // The error callback above will tell us what happened.
